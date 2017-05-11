@@ -1,4 +1,4 @@
-# Created by .ignore support plugin (hsz.mobi)
+#Created by .ignore support plugin (hsz.mobi)
 ### CMake template
 CMakeCache.txt
 CMakeFiles
@@ -55,6 +55,11 @@ CTestTestfile.cmake
  *.[oa]
  *~
 
+.idea
+cmake-build-debug/*
+*.dot
+*.svg
 
-Supprimerait .idea/
 Supprimerait cmake-build-debug/
+Supprimerait cmake/
+Supprimerait dots/
