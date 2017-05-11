@@ -110,11 +110,9 @@ bus_call(GstBus *bus,
                     gst_element_state_get_name(old_state), gst_element_state_get_name(new_state));
 
 
-            GST_DEBUG_BIN_TO_DOT_FILE_WITH_TS(
-                    GST_BIN(test->pipeline),
-                    GST_DEBUG_GRAPH_SHOW_ALL,
+            GST_DEBUG_BIN_TO_DOT_FILE_WITH_TS(GST_BIN(test->pipeline), GST_DEBUG_GRAPH_SHOW_ALL,
                     g_strconcat(gst_element_state_get_name(old_state),
-                                "_", gst_element_state_get_name(new_state)));
+                                "_", gst_element_state_get_name(new_state), NULL));
             break;
         }
 
@@ -128,6 +126,7 @@ bus_call(GstBus *bus,
 static void demux_new_pad(GstElement *demux,
                           GstPad *pad,
                           Test *test) {
+
 
     const gchar *cap_name, *cap_media;
     gchar *pad_name;
@@ -350,13 +349,13 @@ gint main(gint argc, gchar *argv[]) {
 
     const char *mts_file = "/lol.mts";
     g_autofree gchar *ts_location = g_strconcat(folder, mts_file, NULL);
-
+/*
     const char *avi_file = "/lol.avi";
     g_autofree gchar *avi_location = g_strconcat(folder, avi_file, NULL);
 
     const char *app_file = "/lol";
     g_autofree gchar *lol_location = g_strconcat(folder, app_file, NULL);
-
+*/
     g_print(" test mode %d ts location : %s \n", test_mode, ts_location);
 
 
